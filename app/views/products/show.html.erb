@@ -1,0 +1,37 @@
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
+ 
+<p>
+  <strong>Description:</strong>
+  <%= @product.description %>
+</p>
+
+ <p>
+  <strong>SKU_ID:</strong>
+  <%= @product.sku_id %>
+</p>
+
+<p>
+  <strong>Expiry Date:</strong>
+  <%= @product.expire_date %>
+</p>
+ 
+ <p>
+  <strong>Price:</strong>
+  <%= @product.price %>
+</p>
+
+ <p>
+  <strong>Categories:</strong>
+  <%= @product.categories.uniq.map(&:name).join(", ") %>
+</p>
+
+ <p>
+  <strong>Approved:</strong>
+  <%= @product.admin_approved ? 'Yes' : 'No' %>
+</p>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>

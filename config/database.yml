@@ -1,0 +1,19 @@
+development:
+  host: localhost
+  adapter: postgresql
+  encoding: unicode
+  database: supermarket_dev
+  pool: 5
+  username: postgres
+  password: postgres
+  timeout: 5000
+
+test:
+  host: localhost
+  adapter: postgresql
+  encoding: unicode
+  database: supermarket_test
+  pool: 5
+  username: postgres
+  password: postgres
+  timeout: 5000

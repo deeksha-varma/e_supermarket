@@ -1,0 +1,28 @@
+<h1>Listing Products</h1>
+ 
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>SKU_ID</th>
+      <th>Price</th>
+      <th>Images</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+ 
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.id %></td>
+        <td><%= link_to product.name, edit_product_path(product) %></td>
+        <td><%= simple_format product.description %></td>
+        <td><%= link_to product.sku_id, edit_product_path(product) %></td>
+        <td><%= product.price %></td>
+        <td><%= image_tag(product.images.first, size: '50') if product.images.present? %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
